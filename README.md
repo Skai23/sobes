@@ -9,14 +9,25 @@ cd sobes/server
 docker build --tag python-http-server:latest .
 docker push python-http-server:latest
 ```
-## deploy to k8s
+## deploy to microk8s
+
+Start [microk8s](https://github.com/canonical/microk8s) cluster and enshure that microk8s cluster enable modules ingress and repositiry. Enable if nessesary
 ```
-git clone https://github.com/Skai23/sobes.git
+microk8s start
+microk8s enable ingress
+microk8s enable repository
+```
+push docker image to local registry
+```
+docker tag python-http-server:latest localhost:32000/python-http-server:latest
+docker push localhost:32000/python-http-server:latest
+
+apply manifests to microk8s cluster
+```
 cd sobes/k8s
-#change ingress host your-domain.com in ingress.yaml
-vi ingress.yaml
-kubectl apply -f ./*
+kubectl apply -f deploy.yaml -f service.yaml -f ingress.yaml
 ```
+Done! Try curl http://py-server.localhost
 
 ## Handlers
 request from / returns simple format timestamp and hostname

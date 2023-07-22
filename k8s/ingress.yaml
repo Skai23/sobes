@@ -4,7 +4,7 @@ metadata:
   name: python-http-server-ingress
 spec:
   rules:
-  - host: your-domain.com
+  - host: py-server.localhost
     http:
       paths:
       - path: /

@@ -8,7 +8,9 @@ spec:
   ports:
   - protocol: TCP
     port: 8000
+    name: server
     targetPort: 8000
   - protocol: TCP
     port: 8001
+    name: metrics
     targetPort: 8001
