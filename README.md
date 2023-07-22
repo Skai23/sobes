@@ -21,7 +21,7 @@ push docker image to local registry
 ```
 docker tag python-http-server:latest localhost:32000/python-http-server:latest
 docker push localhost:32000/python-http-server:latest
-
+```
 apply manifests to microk8s cluster
 ```
 cd sobes/k8s
