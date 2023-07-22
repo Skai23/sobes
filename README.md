@@ -23,6 +23,6 @@ request from / returns simple format timestamp and hostname
 
 request from /health returns health check
 
-request from /metrics returns prometheus format
+request from /metrics returns prometheus format metrics
 
 All another requests returns 404 response Not found
