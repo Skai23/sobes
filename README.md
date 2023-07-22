@@ -6,7 +6,7 @@ Additionally there are two endpoints for checking health and metrics in Promethe
 ```
 git clone https://github.com/Skai23/sobes.git
 cd sobes/server
-docker build --tag python-http-server:latest
+docker build --tag python-http-server:latest .
 docker push python-http-server:latest
 ```
 ## deploy to k8s
